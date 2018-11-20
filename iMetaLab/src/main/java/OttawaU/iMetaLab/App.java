@@ -1,4 +1,4 @@
-package OttawaU.iMetaLab;
+package main.java.OttawaU.iMetaLab;
 
 /**
  * Hello world!

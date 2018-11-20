@@ -1,0 +1,10 @@
+# here is an order list for a hypothetical on-line shoe store
+# the warehouse manager will need to place the order items into shipping boxes numbered according to the order number
+# referring to the Input and Inventory files, create an Output file containing  item ID, item shelf location, item bin location, shipping box number, and item volume to be shipped as instructions for warehouse manager to fulfill orders
+# add one of each item per order, inventory volume permitting
+# one line per order item; e.g. order_001 should have three lines, one for each item
+# order priority is to lowest order number
+
+After the user requirement analysis, I will put them into 4 parts, input, preprocess, process and output.
+
+Please check the flowchart for the small program. 

@@ -10,5 +10,6 @@ import junit.framework.TestSuite;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/iMetaLab/outline.feature", glue="src/test/iMetaLab")
+@CucumberOptions(features="src/test/iMetaLab/outline.feature", plugin="pretty")
+//glue="src/test/iMetaLab
 public class AppTest {}

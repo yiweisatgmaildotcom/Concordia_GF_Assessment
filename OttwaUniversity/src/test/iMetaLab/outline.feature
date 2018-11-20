@@ -28,7 +28,7 @@
 		Given I open iMetaLab website
 		When I click Resource button
 		And I click the DownloadMetaLab button
-		Then The account page shows up
+		Then The dashboard page shows up
 		When Welcome to iMetaLab shows up
 		And  Create Session button shows up
 		And  View Result button shows up

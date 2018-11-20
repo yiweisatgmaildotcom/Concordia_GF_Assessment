@@ -1,4 +1,4 @@
-package OttawaU.iMetaLab; 
+package test.java.OttawaU.iMetaLab;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,6 +8,7 @@ import java.util.List;
 import org.openqa.selenium.By; 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,7 +34,7 @@ public class stepdefinition {
 
    @Then("I close the browser")
    public void I_close_the_browser() throws Exception{
-       
+       Thread.sleep(2000);
        driver.close();
    }
  
@@ -55,6 +56,9 @@ public class stepdefinition {
        // Write code here that turns the phrase above into concrete actions
 	  // driver.findElement(By.id("content_4_2-button")).click(); 
 	  // driver.findElement(By.linkText("//href=\"http://dashboard.imetalab.ca/account")).click();
+	  /* WebDriverWait wait = new WebDriverWait(driver, 10); 
+	   WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("content_4_2-button")));
+	   element.click();*/
 	   driver.get("http://dashboard.imetalab.ca/account");
 	   Thread.sleep(2000);
    }
@@ -81,35 +85,35 @@ public class stepdefinition {
        // Write code here that turns the phrase above into concrete actions
       String welcome_text = driver.findElement(By.xpath("//*[@id=\"root\"]/div//span/h3")).getText();
       String version_text = driver.findElement(By.xpath("//*[@id=\"root\"]/div//span/p")).getText();
-      assert(welcome_text.equalsIgnoreCase("Welcome to iMetaLab!") && version_text.equalsIgnoreCase("(current version 1.1.1)")); 
-   
+     // assert(welcome_text.equalsIgnoreCase("Welcome to iMetaLab!") && version_text.equalsIgnoreCase("(current version 1.1.1)")); 
+      assertEquals("The text of Welcome to iMetaLab!", true, welcome_text.equalsIgnoreCase("Welcome to iMetaLab!"));
+      assertEquals("The text of current version", true, version_text.equalsIgnoreCase("(current version 1.1.1)"));
    }
 
    @And("Create Session button shows up")
    public void create_Session_button_shows_up() throws Exception{
-       // Write code here that turns the phrase above into concrete actions
-	  
+       // Write code here that turns the phrase above into concrete actions	  
       WebElement c_session= driver.findElements(By.xpath("//*[@id=\"root\"]/div//a/div[1]")).get(0);
       if(c_session.isDisplayed()&& c_session.isEnabled()) {
-       assertEquals("The 'title of CREATE SESSION'",0, driver.findElement(By.xpath("//div[@class='title']")).getText().compareTo("CREATE SESSION"));
+       assertEquals("The 'title of CREATE SESSION'",0, driver.findElements(By.xpath("//div[@class='title']")).get(0).getText().compareTo("CREATE SESSION"));
       }
    }
 
    @And("View Result button shows up")
    public void view_Result_button_shows_up() throws Exception{
        // Write code here that turns the phrase above into concrete actions
-	   WebElement view_result= driver.findElements(By.xpath("//*[@id=\"root\"]/div//a/div[1]")).get(1);       
-	   //System.out.println("The title of view result is "+ view_result.getAttribute("title"));
-	   //assertEquals("The 'title of VIEW RESULTS'",0, view_result.getAttribute("title").compareTo("View Results"));
+	  WebElement view_result = driver.findElements(By.xpath("//*[@id=\"root\"]/div//a/div[1]")).get(1);       
+	   System.out.println("The title of view result is "+ view_result.getText());
+	   assertEquals("The 'title of VIEW RESULTS'",0, view_result.getText().compareTo("View Results"));
 
    }
 
    @And("Tutorial button shows up")
    public void Tutorial_button_shows_up() throws Exception{
        // Write code here that turns the phrase above into concrete actions
-	   WebElement tutorial= driver.findElements(By.xpath("//*[@id=\"root\"]/div//a/div[1]")).get(2);
+	   WebElement tutorial = driver.findElements(By.xpath("//*[@id=\"root\"]/div//a/div[1]")).get(2);
 	   //System.out.println("The title of tutorial is "+ tutorial.getText());
-	   //assertEquals("The 'title of TUTORIAL'",0, tutorial.getAttribute("title").compareTo("TUTORIAL"));
+	   //assertEquals("The 'title of TUTORIAL'",0, tutorial.getText().compareTo("TUTORIAL"));
 
    }
 

@@ -1,4 +1,4 @@
-package OttawaU.iMetaLab;
+package test.java.OttawaU.iMetaLab;
 
 import org.junit.runner.RunWith;
 

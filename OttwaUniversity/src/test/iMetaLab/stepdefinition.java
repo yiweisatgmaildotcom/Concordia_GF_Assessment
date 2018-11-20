@@ -19,7 +19,7 @@ public class stepdefinition {
 
  
 
-   @cucumber.api.java.en.Given("I have open the browser")
+   @Given("I have open the browser")
    public void I_have_open_the_browser() throws Exception {
 	   System.setProperty("webdriver.gecko.driver", "res/geckodriver");
 
@@ -37,7 +37,7 @@ public class stepdefinition {
    @Given("I open iMetaLab website")
    public void i_open_iMetaLab_website()throws Exception {
        // Write code here that turns the phrase above into concrete actions
-      driver.get("http://imetalab.ca/");
+	   driver.get("http://imetalab.ca/");
    }
 
    @When("I click Resource button")
@@ -50,11 +50,13 @@ public class stepdefinition {
    @When("I click the DownloadMetaLab button")
    public void i_click_the_DownloadMetaLab_button() throws Exception {
        // Write code here that turns the phrase above into concrete actions
-	   driver.findElement(By.id("content_4_2-button")).click(); 
+	  // driver.findElement(By.id("content_4_2-button")).click(); 
+	   driver.get("http://dashboard.imetalab.ca/account");
+	   Thread.sleep(2000);
    }
 
-   @Then("The account page shows up")
-   public void the_account_page_shows_up() throws Exception{
+   @Then("The dashboard page shows up")
+   public void the_dashboard_page_shows_up() throws Exception{
        // Write code here that turns the phrase above into concrete actions
        try{
     	   WebElement dash_b=driver.findElement(By.xpath("//span[@class=\"ant-breadcrumb-link\"]"));
@@ -75,7 +77,7 @@ public class stepdefinition {
        // Write code here that turns the phrase above into concrete actions
       String welcome_text = driver.findElement(By.xpath("//*[@id=\"root\"]/div//span/h3")).getText();
       String version_text = driver.findElement(By.xpath("//*[@id=\"root\"]/div//span/p")).getText();
-      if (welcome_text=="Welcome to iMetaLab!" && version_text.equalsIgnoreCase("(current version 1.1.1)")) {
+      if (welcome_text.equalsIgnoreCase("Welcome to iMetaLab!") && version_text.equalsIgnoreCase("(current version 1.1.1)")) {
     	        }
       else {
     	  System.out.println("The welcome to iMetaLab does not show up correctly!");
@@ -94,17 +96,13 @@ public class stepdefinition {
 	   driver.findElements(By.xpath("//*[@id=\"root\"]/div//a/div[1]")).get(1);
    }
 
-   @Then("And Tutorial button shows up")
-   public void and_Tutorial_button_shows_up() throws Exception{
+   @And("Tutorial button shows up")
+   public void Tutorial_button_shows_up() throws Exception{
        // Write code here that turns the phrase above into concrete actions
 	   driver.findElements(By.xpath("//*[@id=\"root\"]/div//a/div[1]")).get(2);
    }
 
-   @Then("I close the browser")
-   public void i_close_the_browser() throws Exception{
-       // Write code here that turns the phrase above into concrete actions
-	   driver.close();
-   }
+   
 
  
 }
