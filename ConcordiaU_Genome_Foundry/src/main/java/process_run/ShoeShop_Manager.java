@@ -4,12 +4,14 @@ public class ShoeShop_Manager {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// TODO preparation
+		// TODO preparation, 
 		
-		// TODO input
+		// TODO input with csv reader
 		
 		// TODO pre and process
 		
-		// TODO output the two files output.csv and inventory.csv
+		// TODO output the two files output.csv and inventory.csv with csv writer
+		
+		
 	}
 }
