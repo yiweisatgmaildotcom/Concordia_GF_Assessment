@@ -5,6 +5,6 @@
 # one line per order item; e.g. order_001 should have three lines, one for each item
 # order priority is to lowest order number
 
-After the user requirement analysis, I will put them into 4 parts, input, preprocess, process and output.
+After the user requirement analysis, I will put them into 4 parts, preparation, input, preprocess and process and output.
 
 Please check the flowchart for the small program. 
