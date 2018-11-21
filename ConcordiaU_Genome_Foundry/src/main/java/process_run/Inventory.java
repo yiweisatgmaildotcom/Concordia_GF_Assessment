@@ -2,9 +2,9 @@ package process_run;
 
 public class Inventory {
 	String shelf;
-	String Bin;
-	String Item;
-	int Volumn;
+	String bin;
+	String item;
+	int volumn;
 	public String getShelf() {
 		return shelf;
 	}
@@ -12,26 +12,29 @@ public class Inventory {
 		this.shelf = shelf;
 	}
 	public String getBin() {
-		return Bin;
+		return bin;
 	}
 	public void setBin(String bin) {
-		Bin = bin;
+		bin = bin;
 	}
 	public String getItem() {
-		return Item;
+		return item;
 	}
 	public void setItem(String item) {
-		Item = item;
+		item = item;
 	}
 	public int getVolumn() {
-		return Volumn;
+		return volumn;
 	}
 	public void setVolumn(int volumn) {
-		Volumn = volumn;
+		volumn = volumn;
 	}
+	
 	/**
 	 * This constructor will use the reading lines of inventory.csv to create objects line by line.
-	 *  
+	 * Since the read/write in are all strings, we need 
+	 * Convert using Integer.toString(int)
+	 * Convert using String.valueOf(int) 
 	 * @param shelf
 	 * @param bin
 	 * @param item
@@ -40,9 +43,9 @@ public class Inventory {
 	public Inventory(String shelf, String bin, String item, int volumn) {
 		super();
 		this.shelf = shelf;
-		this.Bin = bin;
-		this.Item = item;
-		this.Volumn = volumn;
+		this.bin = bin;
+		this.item = item;
+		this.volumn = volumn;
 	}
 	public Inventory() {
 		
