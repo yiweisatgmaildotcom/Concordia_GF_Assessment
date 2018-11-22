@@ -9,7 +9,8 @@ public class CSV_Writor {
     File outFile;
     File invFile;
     File noFilledOrder;
-	public CSV_Writor() {
+    Order_Processor pr;
+	public CSV_Writor(Order_Processor pr) {
 		outFile = new File("/home/yiwei/git/repository/ConcordiaU_Genome_Foundry/src/main/java/res/Output.csv");
 		noFilledOrder = new File("/home/yiwei/git/repository/ConcordiaU_Genome_Foundry/src/main/java/res/NoFilledOrder.csv");
 		invFile = new File("/home/yiwei/git/repository/ConcordiaU_Genome_Foundry/src/main/java/process_run/Inventory.csv");
@@ -17,7 +18,7 @@ public class CSV_Writor {
 		w_files.add(outFile);
 		w_files.add(noFilledOrder);
 		w_files.add(invFile);
-		
+		this.pr= pr;
 	}
 	public void write() {
 		// TODO Auto-generated method stub
