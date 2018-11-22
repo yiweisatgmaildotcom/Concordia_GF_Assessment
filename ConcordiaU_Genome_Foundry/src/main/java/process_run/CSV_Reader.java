@@ -59,11 +59,11 @@ public class CSV_Reader {
 	            br = new BufferedReader(fileReader);
 	            int line_ctr=0;
 	           // while ((line = br.readLine()) != null ) {
-	            while ((line = br.readLine()) != null & line_ctr <10) {
+	            while ((line = br.readLine()) != null ) {
 	            	// use comma as separator
 	            	if (file_ctr==0) {
 	            		String[] invents = line.split(cvsSplitBy);
-	                    System.out.println("the volumn in line  "+line_ctr+" is "+invents[3]);
+	                   // System.out.println("the volumn in line  "+line_ctr+" is "+invents[3]);
 	                    if (line_ctr>=1) {
 		                    Inventory an_inv = new Inventory(invents);
 		                    inv_list.add(an_inv);
@@ -73,16 +73,17 @@ public class CSV_Reader {
 	            	}
 	            	else {           			
 	                               
-	                    if (line_ctr>=4) {
+	                    if (line_ctr>=4 ) {
 	            			orders.add(line);
 	            			 System.out.println("the order in line  "+line_ctr+" is "+line);
 	            		}
 	                    line_ctr++;
+	                    //TODO only for testing
+	                    if (line_ctr==10) {
+	                    	break;
+	                    }
 	            	}
-	               /* Tokenizer a_toke = new Tokenizer(line);                
-	                line_ctr ++;
-	                System.out.println("the line "+line_ctr+" "+a_toke.result[0]);*/
-	
+	              	
 	            }
 	            System.out.println("The total line number is: "+ line_ctr);
 	        } catch (FileNotFoundException e) {

@@ -1,7 +1,7 @@
 package process_run;
 
 import java.util.ArrayList;
-
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -19,8 +19,8 @@ public class Order_Processor {
 		this.a_reader = a_reader; 
 		filledOrder = new ArrayList<String>();
 		noFilledOrder = new LinkedList<String>();
-		dict = new HashMap<String, ArrayList<String>>();
-		no_dict = new HashMap<String, LinkedList<String>>();
+		dict = new TreeMap<String, ArrayList<String>>();
+		no_dict = new TreeMap<String, LinkedList<String>>();
 		dict_tree = new TreeMap<String, ArrayList<String>>();
 		
 	}
@@ -44,39 +44,62 @@ public class Order_Processor {
 		}
 		//to check if the treeMap is ordered faster than HashMap? 
 		
-		//traverse the dict_tree 
-		/*for(String key: dict.keySet()) {
-			System.out.println("The key, value in dict is " + key + " "+dict.get(key));			
-		}*/
+		
 		for(String key: dict_tree.keySet()) {
 			System.out.println("The key, value in dict_tree is " + key + " "+dict_tree.get(key));			
 		}
 		//order process by order numbers
 		for(String key: dict_tree.keySet()) {
-			dict.clear();
+			
 			System.out.println("Dealing with the order " + key + "... ");
 			for (String item: dict_tree.get(key)){
 				//if item is matched and volumn is not zero
+				System.out.println("the sorted order item in dict_tree is: "+ item);
 				boolean filled = false;
+//////////////////////////////////////////////////////SEARCH AND MATCHING
 				for(int j=0; j<a_reader.getInv_list().size(); j++) {
 					String an_item = a_reader.getInv_list().get(j).getItem();
 					String a_vol = a_reader.getInv_list().get(j).getVolumn();
-					if(item.equalsIgnoreCase(an_item)& Integer.parseInt(a_vol)>0) {
-						filled= true;
-						a_reader.getInv_list().get(j).setVolumnMinusOne(a_vol);						
+					//System.out.println("The item, volumn is :" + an_item+" "+ a_vol);
+					if(item.equalsIgnoreCase(an_item)) {
+						if(Integer.parseInt(a_vol)>0) {
+							filled= true;
+							a_reader.getInv_list().get(j).setVolumnMinusOne(a_vol);	
+							System.out.println("one item in order FILLED");
+							break;
+							
+						}	
+						System.out.println("dealed with inventory and volumn");
 					}
-					else 
-						noFilledOrder.add(item);
-					if (filled){
-						filledOrder.add(item);
-						filled= false;
-					}					
+					else {
+						continue;
+					}
+								
+				}//searching the inventory list end
+				if (filled){
+					filledOrder.add(item);				
+					filled= false;
+				}		
+				else {
+					noFilledOrder.add(item);
+					System.out.println("dealing with no Filled orders");
 				}
+////////////////////////////////////////////END OF SEARCH AND MATCHING /////////////
 				
 			}
 			dict.put(key, filledOrder);
 			no_dict.put(key, noFilledOrder);
+			filledOrder = new ArrayList<String>();
+			noFilledOrder = new LinkedList<String>();
 		}//for loop for keys in dict_tree 
+		//traverse the dict
+		
+		for(String key: dict.keySet()) {
+					System.out.println("The key, value in dict is " + key + " "+dict.get(key));			
+		}
+		for(String key: no_dict.keySet()) {
+			System.out.println("The key, value in no_dict is " + key + " "+no_dict.get(key));			
+}
 	}
 /////////////////////////////////////////////////////////////////////////////////////////
 // setters or getters

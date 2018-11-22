@@ -24,7 +24,7 @@ public class CSV_Writor {
 		//Use a loop to traverse the Files 
 		// open outFile
 		// write the header
-		
+		String header ="Order Item Shelf Bin Shipping Box Volume";
 		
 		//write the body
 		
