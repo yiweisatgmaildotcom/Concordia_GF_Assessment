@@ -7,8 +7,9 @@ public class ShoeShop_Manager {
 		// TODO preparation, 
 		
 		// TODO input with csv reader
-		
-		// TODO pre and process
+		CSV_Reader a_reader= new CSV_Reader();
+		a_reader.start_reading();
+		// TODO pre and process, dealing with order
 		
 		// TODO output the two files output.csv and inventory.csv with csv writer
 		

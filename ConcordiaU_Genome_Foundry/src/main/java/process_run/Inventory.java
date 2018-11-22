@@ -4,7 +4,7 @@ public class Inventory {
 	String shelf;
 	String bin;
 	String item;
-	int volumn;
+	String volumn;
 	public String getShelf() {
 		return shelf;
 	}
@@ -15,19 +15,21 @@ public class Inventory {
 		return bin;
 	}
 	public void setBin(String bin) {
-		bin = bin;
+		this.bin = bin;
 	}
 	public String getItem() {
 		return item;
 	}
 	public void setItem(String item) {
-		item = item;
+		this.item = item;
 	}
-	public int getVolumn() {
+	public String getVolumn() {
 		return volumn;
 	}
-	public void setVolumn(int volumn) {
-		volumn = volumn;
+	public void setVolumnMinusOne(String volumn) {
+		//String.valueOf(int)
+		int volumn_minus_one = Integer.parseInt(volumn)-1;
+		this.volumn = String.valueOf(volumn_minus_one);
 	}
 	
 	/**
@@ -40,7 +42,7 @@ public class Inventory {
 	 * @param item
 	 * @param volumn
 	 */
-	public Inventory(String shelf, String bin, String item, int volumn) {
+	public Inventory(String shelf, String bin, String item, String volumn) {
 		super();
 		this.shelf = shelf;
 		this.bin = bin;
