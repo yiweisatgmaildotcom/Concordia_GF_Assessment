@@ -1,0 +1,22 @@
+Order,Item,Shelf,Bin,Shipping Box,Volume
+order_001,shoeID_518,shelf_06,bin518,order_001,0
+,bootID_126,shelf_02,bin126,order_001,27
+,bootID_163,shelf_02,bin163,order_001,11
+order_002,sneakerID_136,shelf_02,bin136,order_002,21
+,sneakerID_342,shelf_04,bin342,order_002,23
+,sneakerID_453,shelf_05,bin453,order_002,19
+,bootID_128,shelf_02,bin128,order_002,43
+order_003,bootID_285,shelf_03,bin285,order_003,46
+,sneakerID_275,shelf_03,bin275,order_003,24
+,bootID_077,shelf_01,bin077,order_003,0
+,shoeID_037,shelf_01,bin037,order_003,9
+order_004,sneakerID_152,shelf_02,bin152,order_004,21
+,shoeID_532,shelf_06,bin532,order_004,2
+,shoeID_035,shelf_01,bin035,order_004,20
+,bootID_038,shelf_01,bin038,order_004,15
+,shoeID_095,shelf_01,bin095,order_004,2
+order_005,shoeID_122,shelf_02,bin122,order_005,3
+order_006,bootID_050,shelf_01,bin050,order_006,2
+,sneakerID_132,shelf_02,bin132,order_006,46
+,sneakerID_084,shelf_01,bin084,order_006,15
+,bootID_115,shelf_02,bin115,order_006,27

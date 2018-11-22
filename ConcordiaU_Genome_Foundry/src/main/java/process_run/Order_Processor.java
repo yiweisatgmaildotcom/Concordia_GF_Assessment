@@ -15,6 +15,9 @@ public class Order_Processor {
 	Map <String, ArrayList<String>> dict;
 	Map <String, LinkedList<String>> no_dict;
 	Map <String, ArrayList<String>> dict_tree ;
+	ArrayList<Inventory> touchedInv;
+	
+	
 	public Order_Processor(CSV_Reader a_reader) {
 		this.a_reader = a_reader; 
 		filledOrder = new ArrayList<String>();
@@ -22,6 +25,7 @@ public class Order_Processor {
 		dict = new TreeMap<String, ArrayList<String>>();
 		no_dict = new TreeMap<String, LinkedList<String>>();
 		dict_tree = new TreeMap<String, ArrayList<String>>();
+		touchedInv = new ArrayList<Inventory>();
 		
 	}
 	/**
@@ -66,6 +70,7 @@ public class Order_Processor {
 							filled= true;
 							a_reader.getInv_list().get(j).setVolumnMinusOne(a_vol);	
 							System.out.println("one item in order FILLED");
+							touchedInv.add(a_reader.getInv_list().get(j));
 							break;
 							
 						}	
@@ -73,8 +78,7 @@ public class Order_Processor {
 					}
 					else {
 						continue;
-					}
-								
+					}								
 				}//searching the inventory list end
 				if (filled){
 					filledOrder.add(item);				
@@ -137,5 +141,7 @@ public class Order_Processor {
 	public CSV_Reader getA_reader() {
 		return a_reader;
 	}
-	
+	public ArrayList<Inventory> getTouchedInv() {
+		return touchedInv;
+	}
 }
