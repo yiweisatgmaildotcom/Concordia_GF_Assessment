@@ -11,8 +11,11 @@ public class ShoeShop_Manager {
 		a_reader.start_reading();
 		// TODO pre and process, dealing with order
 		
+		Order_Processor ao_pr = new Order_Processor(a_reader);
+		ao_pr.order_process();
 		// TODO output the two files output.csv and inventory.csv with csv writer
-		
+		CSV_Writor a_wtr = new CSV_Writor();
+		a_wtr.write();
 		
 	}
 }

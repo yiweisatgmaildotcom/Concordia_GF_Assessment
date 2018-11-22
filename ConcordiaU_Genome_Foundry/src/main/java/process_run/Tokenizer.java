@@ -10,16 +10,16 @@ public class Tokenizer {
     public Tokenizer(String a)
     {
         result = a.split(" ");
-        if (result[0].contains(";")){
+        if (result[0].contains(",")){
         	
-        	result= a.split(";");
+        	result= a.split(",");
         }
     }
    
     
     public int volumn(int position)
     {
-        String temp[] = result[position].split(" ");
+        String temp[] = result[position].split(",");
         return Integer.parseInt(temp[3]);
     }
     public int order_num(int position) {
@@ -27,4 +27,5 @@ public class Tokenizer {
     	String order_str = result[position];
     	return Integer.parseInt(order_str);
     }
+    
 }

@@ -42,12 +42,16 @@ public class Inventory {
 	 * @param item
 	 * @param volumn
 	 */
-	public Inventory(String shelf, String bin, String item, String volumn) {
+	public Inventory(String[] input) {
 		super();
-		this.shelf = shelf;
-		this.bin = bin;
-		this.item = item;
-		this.volumn = volumn;
+		if (input.length==4)
+		{
+			this.shelf = input[0];
+			this.bin = input[1];
+			this.item = input[2];
+			this.volumn = input[3];
+		}
+		
 	}
 	public Inventory() {
 		
