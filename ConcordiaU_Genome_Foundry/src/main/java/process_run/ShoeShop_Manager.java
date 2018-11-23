@@ -2,10 +2,10 @@ package process_run;
 
 public class ShoeShop_Manager {
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		// TODO preprocess, 
 		// Cleaning up the *.csv files, get rid of extra "" and useless info.
+		
 		// INPUT with csv reader
 		CSV_Reader a_reader= new CSV_Reader();
 		a_reader.start_reading();
