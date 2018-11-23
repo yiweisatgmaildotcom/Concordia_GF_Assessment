@@ -1,5 +1,10 @@
 package process_run;
-
+/**
+ * This manager will manage reader, writer, Order_Processor and preprocess(under development).
+ * It will read through reader, process with Processor and write with Writer.
+ * @author yiwei
+ *
+ */
 public class ShoeShop_Manager {
 
 	public static void main(String[] args) {		
