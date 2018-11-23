@@ -79,13 +79,13 @@ public class CSV_Reader {
 	            		}
 	                    line_ctr++;
 	                    //TODO only for testing
-	                    if (line_ctr==10) {
+	                   /* if (line_ctr==10) {
 	                    	break;
-	                    }
+	                    }*/
 	            	}
 	              	
 	            }
-	            System.out.println("The total line number is: "+ line_ctr);
+	            System.out.println("The file "+fileName+" total line number is: "+ line_ctr);
 	        } catch (FileNotFoundException e) {
 	            e.printStackTrace();
 	        } catch (IOException e) {
@@ -101,7 +101,7 @@ public class CSV_Reader {
 	        }
 	}   
 		files.clear();
-		//read input.csv and put them into an ArrayList<String[]>
+		
 		
 	}
 	
