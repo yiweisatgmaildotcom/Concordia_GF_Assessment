@@ -65,16 +65,17 @@ public class Order_Processor {
 					String an_item = a_reader.getInv_list().get(j).getItem();
 					String a_vol = a_reader.getInv_list().get(j).getVolumn();
 					//System.out.println("The item, volumn is :" + an_item+" "+ a_vol);
-					if(item.equalsIgnoreCase(an_item)) {
-						if(Integer.parseInt(a_vol)>0) {
+					if(item.equalsIgnoreCase(an_item)& Integer.parseInt(a_vol)>0) {
+						//if(Integer.parseInt(a_vol)>0) {
 							filled= true;
 							a_reader.getInv_list().get(j).setVolumnMinusOne(a_vol);	
 							System.out.println("one item in order FILLED");
 							touchedInv.add(a_reader.getInv_list().get(j));
+							System.out.println("dealed with inventory and volumn");
 							break;
 							
-						}	
-						System.out.println("dealed with inventory and volumn");
+						//}	
+						
 					}
 					else {
 						continue;
@@ -86,6 +87,7 @@ public class Order_Processor {
 				}		
 				else {
 					noFilledOrder.add(item);
+					System.out.println("one item in order NOT FILLED");
 					System.out.println("dealing with no Filled orders");
 				}
 ////////////////////////////////////////////END OF SEARCH AND MATCHING /////////////

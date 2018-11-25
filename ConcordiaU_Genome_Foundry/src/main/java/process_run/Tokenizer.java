@@ -1,7 +1,5 @@
 package process_run;
-
 /**
- * this class will split string into an array of string
  * @author yiweisun
  *
  */
